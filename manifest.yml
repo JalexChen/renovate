@@ -1,4 +1,4 @@
-go: 1.20.1
+go: 1.21.5
 nodelts: 20.7.0
 nodeCurrent: 21.0.0
 gcloud: 448.0.0
