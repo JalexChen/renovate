@@ -102,9 +102,21 @@
       "depNameTemplate": "apache/maven",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^maven-(?<version>.*)$"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["docker: 5:(?<currentValue>.+)"],
+      "datasourceTemplate": "custom.docker",
+      "depNameTemplate": "docker"
     }
   ],
   "packageRules": [
+    {
+      "matchDatasources": ["custom.docker"],
+      "matchDepNames": ["docker"],
+      "extractVersion": "^docker-ce_(?<version>.+)_amd64\\.deb$"
+    },
     {
       "updateTypes": ["minor", "patch"],
       "matchPackageNames": ["node"]
