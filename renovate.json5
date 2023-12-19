@@ -1,6 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
+  "customDatasources": {
+    "custom.docker": {
+      "defaultRegistryUrlTemplate": "https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/",
+      "format": "html"
+    }
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -108,7 +114,8 @@
       "fileMatch": ["manifest.yml"],
       "matchStrings": ["docker: 5:(?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker",
-      "depNameTemplate": "docker"
+      "depNameTemplate": "docker",
+      "versioningTemplate": "deb"
     }
   ],
   "packageRules": [
