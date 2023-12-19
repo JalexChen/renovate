@@ -1,6 +1,6 @@
 go: 1.20.1
 nodelts: 20.7.0
-nodeCurrent: 21.0.0
+nodeCurrent: 21.5.0
 gcloud: 448.0.0
 git-lfs: 3.1.1
 gradle: 8.3
