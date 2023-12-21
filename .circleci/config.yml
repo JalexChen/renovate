@@ -29,4 +29,4 @@ jobs:
       - checkout
       - run: renovate-config-validator
       - run: |
-          renovate --token=$GITHUB_TOKEN --autodiscover-filter="JalexChen/renovate"
+          renovate --token=$GITHUB_TOKEN --dry-run
