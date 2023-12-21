@@ -3,7 +3,7 @@ nodelts: 20.7.0
 nodeCurrent: 21.0.0
 gcloud: 448.0.0
 git_lfs: 3.1.1
-gradle: 8.3
+gradle: 8.5
 lein: 2.10.0
 maven: 3.9.3
 pyenv: 2.3.27
