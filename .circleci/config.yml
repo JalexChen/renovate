@@ -6,10 +6,6 @@ parameters:
     default: false
 
 workflows:
-  main-workflow:
-    jobs:
-      - renovate-config-validator:
-          context: image-publishing
   triggered-workflow:
     when: << pipeline.parameters.trigger >>
     jobs:
@@ -26,4 +22,6 @@ jobs:
     steps:
       - checkout
       - run: renovate-config-validator
-      - run: renovate --token=$GITHUB_TOKEN
+      - run: |
+          RENOVATE_AUTODISCOVER_FILTER="JalexChen/renovate/"
+          renovate --token=$GITHUB_TOKEN --autodiscover
