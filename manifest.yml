@@ -10,7 +10,7 @@ pyenv: 2.3.27
 python2: 2.7.18
 python3: 3.11.5
 ruby: 3.2.2
-sbt: 1.9.6
+sbt: v1.9.8
 yarn: 1.22.19
 yq: 4.35.2
 
