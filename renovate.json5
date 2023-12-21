@@ -2,6 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "repositories": ["JalexChen/renovate"],
+  "pin": {
+    "rebaseWhen": "behind-base-branch",
+    "groupName": "ubuntu-2204",
+    "groupSlug": "ubuntu-2204-all",
+    "commitMessageAction": "test pin",
+    "group": {
+      "commitMessageTopic": "test",
+      "commitMessageExtra": ""
+    }
+  },
   "customDatasources": {
     "docker-ce": {
       "defaultRegistryUrlTemplate": "https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/",
@@ -44,7 +54,8 @@
       "fileMatch": ["manifest.yml"],
       "matchStrings": ["git_lfs: (?<currentValue>.+)"],
       "depNameTemplate": "git-lfs/git-lfs",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
       "customType": "regex",
@@ -72,7 +83,8 @@
       "fileMatch": ["manifest.yml"],
       "matchStrings": ["pyenv: (?<currentValue>.+)"],
       "depNameTemplate": "pyenv/pyenv",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
       "customType": "regex",
@@ -93,14 +105,16 @@
       "fileMatch": ["manifest.yml"],
       "matchStrings": ["sbt: (?<currentValue>.+)"],
       "depNameTemplate": "sbt/sbt",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest.yml"],
       "matchStrings": ["yq: (?<currentValue>.+)"],
       "depNameTemplate": "mikefarah/yq",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
       "customType": "regex",
@@ -156,11 +170,9 @@
       "matchPackageNames": ["node"]
     },
     {
-      "matchPackageNames": [
-        "apache/maven"
-      ],
-      "allowedVersions": "/.*/",
-      "rangeStrategy": ["bump"]
+      "groupName": "ubuntu-2204",
+      "groupSlug": "ubuntu-2204-all",
+      "matchFileNames": ["manifest.yml"]
     }
   ]
 }
