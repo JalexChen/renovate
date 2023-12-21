@@ -2,6 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "repositories": ["JalexChen/renovate"],
+  "pin": {
+    "rebaseWhen": "behind-base-branch",
+    "groupName": "ubuntu-2204",
+    "groupSlug": "ubuntu-2204-all",
+    "commitMessageAction": "test pin",
+    "group": {
+      "commitMessageTopic": "test",
+      "commitMessageExtra": ""
+    }
+  },
   "customDatasources": {
     "docker-ce": {
       "defaultRegistryUrlTemplate": "https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/",
@@ -156,11 +166,9 @@
       "matchPackageNames": ["node"]
     },
     {
-      "matchPackageNames": [
-        "apache/maven"
-      ],
-      "allowedVersions": "/.*/",
-      "rangeStrategy": ["bump"]
+      "groupName": "ubuntu-2204",
+      "groupSlug": "ubuntu-2204-all",
+      "matchFileNames": ["manifest.yml"]
     }
   ]
 }
