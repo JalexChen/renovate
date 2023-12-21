@@ -52,9 +52,10 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest.yml"],
-      "matchStrings": ["git_lfs: (?<currentValue>^v.+)"],
+      "matchStrings": ["git_lfs: (?<currentValue>.+)"],
       "depNameTemplate": "git-lfs/git-lfs",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
       "customType": "regex",
@@ -80,9 +81,10 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest.yml"],
-      "matchStrings": ["pyenv: (?<currentValue>^v.+)"],
+      "matchStrings": ["pyenv: (?<currentValue>.+)"],
       "depNameTemplate": "pyenv/pyenv",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
       "customType": "regex",
@@ -101,16 +103,18 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest.yml"],
-      "matchStrings": ["sbt: (?<currentValue>^v.+)"],
+      "matchStrings": ["sbt: (?<currentValue>.+)"],
       "depNameTemplate": "sbt/sbt",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest.yml"],
-      "matchStrings": ["yq: (?<currentValue>^v.+)"],
+      "matchStrings": ["yq: (?<currentValue>.+)"],
       "depNameTemplate": "mikefarah/yq",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     },
     {
       "customType": "regex",
