@@ -1,7 +1,17 @@
 version: 2.1
 
+parameters:
+  trigger:
+    type: boolean
+    default: false
+
 workflows:
   main-workflow:
+    jobs:
+      - renovate-config-validator:
+          context: image-publishing
+  triggered-workflow:
+    when: << pipeline.parameters.trigger >>
     jobs:
       - renovate-config-validator:
           context: image-publishing
@@ -9,10 +19,11 @@ workflows:
 jobs:
   renovate-config-validator:
     environment:
-      GITHUB_COM_TOKEN: $GITHUB_TOKEN
-      RENOVATE_TOKEN: $GITHUB_TOKEN
+      LOG_LEVEL: DEBUG
+      RENOVATE_CONFIG_FILE: renovate.json5
     docker:
       - image: renovate/renovate
     steps:
       - checkout
       - run: renovate-config-validator
+      - run: renovate --token=$GITHUB_TOKEN
