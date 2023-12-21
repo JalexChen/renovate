@@ -7,6 +7,8 @@ parameters:
 
 workflows:
   main-workflow:
+    when:
+      not: << pipeline.parameters.trigger >>
     jobs:
       - renovate-config-validator:
           context: image-publishing
@@ -26,4 +28,5 @@ jobs:
     steps:
       - checkout
       - run: renovate-config-validator
-      - run: renovate --token=$GITHUB_TOKEN
+      - run: |
+          renovate --token=$GITHUB_TOKEN

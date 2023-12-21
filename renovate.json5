@@ -1,108 +1,166 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: [
-    'config:recommended',
-  ],
-  configMigration: true,
-  customDatasources: {
-    'docker-ce': {
-      defaultRegistryUrlTemplate: 'https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/',
-      format: 'html',
-    },
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "repositories": ["JalexChen/renovate"],
+  "customDatasources": {
+    "docker-ce": {
+      "defaultRegistryUrlTemplate": "https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/",
+      "format": "html"
+    }
   },
-  customManagers: [
+  "customManagers": [
     {
-      customType: 'regex',
-      fileMatch: [
-        'manifest.yml',
-      ],
-      matchStrings: [
-        'maven: (?<currentValue>.*)',
-      ],
-      depNameTemplate: 'apache/maven',
-      datasourceTemplate: 'github-releases',
-      extractVersionTemplate: '^maven-(?<version>.*)$',
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["go: (?<currentValue>.+)"],
+      "depNameTemplate": "go",
+      "datasourceTemplate": "golang-version"
     },
     {
-      customType: 'regex',
-      fileMatch: [
-        'manifest.yml',
-      ],
-      matchStrings: [
-        'docker: 5:(?<currentValue>.+)',
-      ],
-      datasourceTemplate: 'custom.docker-ce',
-      depNameTemplate: 'docker',
-      versioningTemplate: 'deb',
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["nodelts: (?<currentValue>20.+)"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "node",
+      "versioningTemplate": "node"
     },
     {
-      customType: 'regex',
-      fileMatch: [
-        'manifest.yml',
-      ],
-      matchStrings: [
-        'containerd: (?<currentValue>.+)',
-      ],
-      datasourceTemplate: 'custom.docker-ce',
-      depNameTemplate: 'containerd',
-      versioningTemplate: 'deb',
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["nodeCurrent: (?<currentValue>21.+)"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "node",
+      "versioningTemplate": "node"
     },
     {
-      customType: 'regex',
-      fileMatch: [
-        'manifest.yml',
-      ],
-      matchStrings: [
-        'docker-compose: (?<currentValue>.+)',
-      ],
-      datasourceTemplate: 'custom.docker-ce',
-      depNameTemplate: 'docker-compose',
-      versioningTemplate: 'deb',
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["gcloud: (?<currentValue>.+)"],
+      "depNameTemplate": "twistedpair/google-cloud-sdk",
+      "datasourceTemplate": "github-tags"
     },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["git_lfs: (?<currentValue>.+)"],
+      "depNameTemplate": "git-lfs/git-lfs",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["gradle: (?<currentValue>.+)"],
+      "depNameTemplate": "gradle",
+      "datasourceTemplate": "gradle-version"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["lein: (?<currentValue>.+)"],
+      "depNameTemplate": "technomancy/leiningen",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["maven: (?<currentValue>.*)"],
+      "depNameTemplate": "apache/maven",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["pyenv: (?<currentValue>.+)"],
+      "depNameTemplate": "pyenv/pyenv",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["python3: (?<currentValue>.+)"],
+      "depNameTemplate": "python/cpython",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["ruby: (?<currentValue>.+)"],
+      "depNameTemplate": "ruby",
+      "datasourceTemplate": "ruby-version"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["sbt: (?<currentValue>.+)"],
+      "depNameTemplate": "sbt/sbt",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["yq: (?<currentValue>.+)"],
+      "depNameTemplate": "mikefarah/yq",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["maven: (?<currentValue>.*)"],
+      "depNameTemplate": "apache/maven",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^maven-(?<version>.*)$"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["docker: 5:(?<currentValue>.+)"],
+      "datasourceTemplate": "custom.docker-ce",
+      "depNameTemplate": "docker",
+      "versioningTemplate": "deb"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["containerd: (?<currentValue>.+)"],
+      "datasourceTemplate": "custom.docker-ce",
+      "depNameTemplate": "containerd",
+      "versioningTemplate": "deb"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["docker-compose: (?<currentValue>.+)"],
+      "datasourceTemplate": "custom.docker-ce",
+      "depNameTemplate": "docker-compose",
+      "versioningTemplate": "deb"
+    }
   ],
-  packageRules: [
+  "packageRules": [
     {
-      matchDatasources: [
-        'custom.docker-ce',
-      ],
-      matchDepNames: [
-        'docker',
-      ],
-      extractVersion: 'docker-ce_(?<version>.+)_amd64\\.deb$',
+      "matchDatasources": ["custom.docker-ce"],
+      "matchDepNames": ["docker"],
+      "extractVersion": "docker-ce_(?<version>.+)_amd64\\.deb$"
     },
     {
-      matchDatasources: [
-        'custom.docker-ce',
-      ],
-      matchDepNames: [
-        'containerd',
-      ],
-      extractVersion: 'containerd\\.io_(?<version>.+)_amd64\\.deb',
+      "matchDatasources": ["custom.docker-ce"],
+      "matchDepNames": ["containerd"],
+      "extractVersion": "containerd\\.io_(?<version>.+)_amd64\\.deb"
     },
     {
-      matchDatasources: [
-        'custom.docker-ce',
-      ],
-      matchDepNames: [
-        'docker-compose',
-      ],
-      extractVersion: 'docker-compose-plugin_(?<version>.+)_amd64\\.deb',
+      "matchDatasources": ["custom.docker-ce"],
+      "matchDepNames": ["docker-compose"],
+      "extractVersion": "docker-compose-plugin_(?<version>.+)_amd64\\.deb"
     },
     {
-      matchUpdateTypes: [
-        'minor',
-        'patch',
-      ],
-      matchPackageNames: [
-        'node',
-      ],
+      "updateTypes": ["minor", "patch"],
+      "matchPackageNames": ["node"]
     },
     {
-      matchPackageNames: [
-        'apache/maven',
+      "matchPackageNames": [
+        "apache/maven"
       ],
-      allowedVersions: '/.*/',
-      rangeStrategy: 'bump',
-    },
-  ],
+      "allowedVersions": "/.*/",
+      "rangeStrategy": ["bump"]
+    }
+  ]
 }
