@@ -1,73 +1,108 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "configMigration": true,
-  "customDatasources": {
-    "docker-ce": {
-      "defaultRegistryUrlTemplate": "https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/",
-      "format": "html"
-    }
-  },
-  "customManagers": [
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest.yml"],
-      "matchStrings": ["maven: (?<currentValue>.*)"],
-      "depNameTemplate": "apache/maven",
-      "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^maven-(?<version>.*)$"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest.yml"],
-      "matchStrings": ["docker: 5:(?<currentValue>.+)"],
-      "datasourceTemplate": "custom.docker-ce",
-      "depNameTemplate": "docker",
-      "versioningTemplate": "deb"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest.yml"],
-      "matchStrings": ["containerd: (?<currentValue>.+)"],
-      "datasourceTemplate": "custom.docker-ce",
-      "depNameTemplate": "containerd",
-      "versioningTemplate": "deb"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest.yml"],
-      "matchStrings": ["docker-compose: (?<currentValue>.+)"],
-      "datasourceTemplate": "custom.docker-ce",
-      "depNameTemplate": "docker-compose",
-      "versioningTemplate": "deb"
-    }
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
   ],
-  "packageRules": [
-    {
-      "matchDatasources": ["custom.docker-ce"],
-      "matchDepNames": ["docker"],
-      "extractVersion": "docker-ce_(?<version>.+)_amd64\\.deb$"
+  configMigration: true,
+  customDatasources: {
+    'docker-ce': {
+      defaultRegistryUrlTemplate: 'https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/',
+      format: 'html',
     },
+  },
+  customManagers: [
     {
-      "matchDatasources": ["custom.docker-ce"],
-      "matchDepNames": ["containerd"],
-      "extractVersion": "containerd\\.io_(?<version>.+)_amd64\\.deb"
-    },
-    {
-      "matchDatasources": ["custom.docker-ce"],
-      "matchDepNames": ["docker-compose"],
-      "extractVersion": "docker-compose-plugin_(?<version>.+)_amd64\\.deb"
-    },
-    {
-      "updateTypes": ["minor", "patch"],
-      "matchPackageNames": ["node"]
-    },
-    {
-      "matchPackageNames": [
-        "apache/maven"
+      customType: 'regex',
+      fileMatch: [
+        'manifest.yml',
       ],
-      "allowedVersions": "/.*/",
-      "rangeStrategy": ["bump"]
-    }
-  ]
+      matchStrings: [
+        'maven: (?<currentValue>.*)',
+      ],
+      depNameTemplate: 'apache/maven',
+      datasourceTemplate: 'github-releases',
+      extractVersionTemplate: '^maven-(?<version>.*)$',
+    },
+    {
+      customType: 'regex',
+      fileMatch: [
+        'manifest.yml',
+      ],
+      matchStrings: [
+        'docker: 5:(?<currentValue>.+)',
+      ],
+      datasourceTemplate: 'custom.docker-ce',
+      depNameTemplate: 'docker',
+      versioningTemplate: 'deb',
+    },
+    {
+      customType: 'regex',
+      fileMatch: [
+        'manifest.yml',
+      ],
+      matchStrings: [
+        'containerd: (?<currentValue>.+)',
+      ],
+      datasourceTemplate: 'custom.docker-ce',
+      depNameTemplate: 'containerd',
+      versioningTemplate: 'deb',
+    },
+    {
+      customType: 'regex',
+      fileMatch: [
+        'manifest.yml',
+      ],
+      matchStrings: [
+        'docker-compose: (?<currentValue>.+)',
+      ],
+      datasourceTemplate: 'custom.docker-ce',
+      depNameTemplate: 'docker-compose',
+      versioningTemplate: 'deb',
+    },
+  ],
+  packageRules: [
+    {
+      matchDatasources: [
+        'custom.docker-ce',
+      ],
+      matchDepNames: [
+        'docker',
+      ],
+      extractVersion: 'docker-ce_(?<version>.+)_amd64\\.deb$',
+    },
+    {
+      matchDatasources: [
+        'custom.docker-ce',
+      ],
+      matchDepNames: [
+        'containerd',
+      ],
+      extractVersion: 'containerd\\.io_(?<version>.+)_amd64\\.deb',
+    },
+    {
+      matchDatasources: [
+        'custom.docker-ce',
+      ],
+      matchDepNames: [
+        'docker-compose',
+      ],
+      extractVersion: 'docker-compose-plugin_(?<version>.+)_amd64\\.deb',
+    },
+    {
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+      ],
+      matchPackageNames: [
+        'node',
+      ],
+    },
+    {
+      matchPackageNames: [
+        'apache/maven',
+      ],
+      allowedVersions: '/.*/',
+      rangeStrategy: 'bump',
+    },
+  ],
 }
