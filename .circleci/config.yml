@@ -1,0 +1,18 @@
+version: 2.1
+
+workflows:
+  main-workflow:
+    jobs:
+      - renovate-config-validator:
+          context: image-publishing
+
+jobs:
+  renovate-config-validator:
+    environment:
+      GITHUB_COM_TOKEN: $GITHUB_TOKEN
+      RENOVATE_TOKEN: $GITHUB_TOKEN
+    docker:
+      - image: renovate/renovate
+    steps:
+      - checkout
+      - run: renovate-config-validator
