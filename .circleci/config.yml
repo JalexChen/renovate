@@ -6,6 +6,12 @@ parameters:
     default: false
 
 workflows:
+  main-workflow:
+    when:
+      not: << pipeline.parameters.trigger >>
+    jobs:
+      - renovate-config-validator:
+          context: image-publishing
   triggered-workflow:
     when: << pipeline.parameters.trigger >>
     jobs:
