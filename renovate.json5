@@ -163,6 +163,10 @@
       "matchPackageNames": ["node"]
     },
     {
+      "updateTypes": ["major", "minor", "patch"],
+      "matchPackageNames": ["twistedpair/google-cloud-sdk"]
+    },
+    {
       "groupName": "ubuntu-2204",
       "groupSlug": "ubuntu-2204-all",
       "matchFileNames": ["manifest.yml"],
