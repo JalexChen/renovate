@@ -74,13 +74,6 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest.yml"],
-      "matchStrings": ["maven: (?<currentValue>.*)"],
-      "depNameTemplate": "apache/maven",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest.yml"],
       "matchStrings": ["pyenv: (?<currentValue>.+)"],
       "depNameTemplate": "pyenv/pyenv",
       "datasourceTemplate": "github-releases",
@@ -172,7 +165,16 @@
     {
       "groupName": "ubuntu-2204",
       "groupSlug": "ubuntu-2204-all",
-      "matchFileNames": ["manifest.yml"]
+      "matchFileNames": ["manifest.yml"],
+      "matchDatasources": [
+        "github-releases",
+        "github-tags",
+        "custom.docker-ce",
+        "golang-version",
+        "node",
+        "gradle-version",
+        "ruby-version"
+      ]
     }
   ]
 }
