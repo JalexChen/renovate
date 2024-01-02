@@ -21,14 +21,14 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["go: (?<currentValue>.+)"],
       "depNameTemplate": "go",
       "datasourceTemplate": "golang-version"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["nodelts: (?<currentValue>20.+)"],
       "depNameTemplate": "node",
       "datasourceTemplate": "node",
@@ -36,7 +36,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["nodeCurrent: (?<currentValue>21.+)"],
       "depNameTemplate": "node",
       "datasourceTemplate": "node",
@@ -44,14 +44,14 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["gcloud: (?<currentValue>.+)"],
       "depNameTemplate": "twistedpair/google-cloud-sdk",
       "datasourceTemplate": "github-tags"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["git_lfs: (?<currentValue>.+)"],
       "depNameTemplate": "git-lfs/git-lfs",
       "datasourceTemplate": "github-releases",
@@ -59,21 +59,21 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["gradle: (?<currentValue>.+)"],
       "depNameTemplate": "gradle",
       "datasourceTemplate": "gradle-version"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["lein: (?<currentValue>.+)"],
       "depNameTemplate": "technomancy/leiningen",
       "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["pyenv: (?<currentValue>.+)"],
       "depNameTemplate": "pyenv/pyenv",
       "datasourceTemplate": "github-releases",
@@ -81,21 +81,21 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["python3: (?<currentValue>.+)"],
       "depNameTemplate": "python/cpython",
       "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["ruby: (?<currentValue>.+)"],
       "depNameTemplate": "ruby",
       "datasourceTemplate": "ruby-version"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["sbt: (?<currentValue>.+)"],
       "depNameTemplate": "sbt/sbt",
       "datasourceTemplate": "github-releases",
@@ -103,7 +103,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["yq: (?<currentValue>.+)"],
       "depNameTemplate": "mikefarah/yq",
       "datasourceTemplate": "github-releases",
@@ -111,7 +111,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["maven: (?<currentValue>.*)"],
       "depNameTemplate": "apache/maven",
       "datasourceTemplate": "github-releases",
@@ -119,7 +119,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["docker: 5:(?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-ce",
       "depNameTemplate": "docker",
@@ -127,7 +127,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["containerd: (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-ce",
       "depNameTemplate": "containerd",
@@ -135,7 +135,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["hello/manifest2.yml"],
       "matchStrings": ["docker-compose: (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-ce",
       "depNameTemplate": "docker-compose",
@@ -169,7 +169,7 @@
     {
       "groupName": "ubuntu-2204",
       "groupSlug": "ubuntu-2204-all",
-      "matchFileNames": ["manifest2.yml"],
+      "matchFileNames": ["hello/manifest2.yml"],
       "matchDatasources": [
         "github-releases",
         "github-tags",
