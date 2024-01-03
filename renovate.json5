@@ -14,25 +14,22 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["docker: 5:(?<currentValue>.+)"],
+      "matchStrings": ["(?<depName>): 5:(?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
-      "depNameTemplate": "docker",
       "versioningTemplate": "deb"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["containerd: (?<currentValue>.+)"],
+      "matchStrings": ["(?<depName>): (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
-      "depNameTemplate": "containerd",
       "versioningTemplate": "deb"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["docker-compose: (?<currentValue>.+)"],
+      "matchStrings": ["(?<depName>): (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
-      "depNameTemplate": "docker-compose",
       "versioningTemplate": "deb"
     }
   ],
@@ -40,17 +37,17 @@
     {
       "matchDatasources": ["custom.docker-jammy"],
       "matchDepNames": ["docker"],
-      "extractVersion": "docker-ce_(?<version>.+)_amd64\\.deb$"
+      "extractVersion": "(?<depName>)-ce_(?<version>.+)_amd64\\.deb$"
     },
     {
       "matchDatasources": ["custom.docker-jammy"],
       "matchDepNames": ["containerd"],
-      "extractVersion": "containerd\\.io_(?<version>.+)_amd64\\.deb"
+      "extractVersion": "(?<depName>)\\.io_(?<version>.+)_amd64\\.deb"
     },
     {
       "matchDatasources": ["custom.docker-jammy"],
       "matchDepNames": ["docker-compose"],
-      "extractVersion": "docker-compose-plugin_(?<version>.+)_amd64\\.deb"
+      "extractVersion": "(?<depName>)-plugin_(?<version>.+)_amd64\\.deb"
     },
     {
       "groupName": "ubuntu-2204",
