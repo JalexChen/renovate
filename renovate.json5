@@ -12,28 +12,50 @@
   },
   "customManagers": [
     {
-    "customType": "regex",
-    "fileMatch": ["manifest2.yml"],
-    "matchStrings": [
-      "docker: 5:(?<docker_version>.+)",
-      "containerd: (?<containerd_version>.+)",
-      "docker-compose: (?<compose_version>.+)"
-    ],
-    "datasourceTemplate": "custom.docker-jammy",
-    "depNameTemplate": "(?<depName>.*?)",
-    "currentValueTemplate": "(?<currentValue>)",
-    "versioningTemplate": "deb"
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["docker: 5:(?<currentValue>.+)"],
+      "datasourceTemplate": "custom.docker-jammy",
+      "depNameTemplate": "docker",
+      "versioningTemplate": "deb"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["containerd: (?<currentValue>.+)"],
+      "datasourceTemplate": "custom.docker-jammy",
+      "depNameTemplate": "containerd",
+      "versioningTemplate": "deb"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": ["docker-compose: (?<currentValue>.+)"],
+      "datasourceTemplate": "custom.docker-jammy",
+      "depNameTemplate": "docker-compose",
+      "versioningTemplate": "deb"
     }
   ],
   "packageRules": [
     {
       "matchDatasources": ["custom.docker-jammy"],
-      "extractVersion": "(?<depName>docker)-ce_(?<docker_version>.+)_amd64\\.deb$|(?<depName>containerd)\\.io_(?<containerd_version>.+)_amd64\\.deb|(?<depName>docker-compose)-plugin_(?<compose_version>.+)_amd64\\.deb"
+      "matchDepNames": ["docker"],
+      "extractVersion": "docker-ce_(?<version>.+)_amd64\\.deb$"
+    },
+    {
+      "matchDatasources": ["custom.docker-jammy"],
+      "matchDepNames": ["containerd"],
+      "extractVersion": "containerd\\.io_(?<version>.+)_amd64\\.deb"
+    },
+    {
+      "matchDatasources": ["custom.docker-jammy"],
+      "matchDepNames": ["docker-compose"],
+      "extractVersion": "docker-compose-plugin_(?<version>.+)_amd64\\.deb"
     },
     {
       "groupName": "ubuntu-2204",
-      "groupSlug": "ubuntu-2204-test",
-      "matchFileNames": ["manifest2.yml"],
+      "groupSlug": "ubuntu-2204-all",
+      "matchFileNames": ["manifest.yml"],
       "matchDatasources": [
         "custom.docker-jammy"
       ]
