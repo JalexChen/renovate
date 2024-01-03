@@ -1,19 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
   "repositories": ["JalexChen/renovate"],
-  "pin": {
-    "rebaseWhen": "behind-base-branch",
-    "groupName": "ubuntu-2204",
-    "groupSlug": "ubuntu-2204-all",
-    "commitMessageAction": "test pin",
-    "group": {
-      "commitMessageTopic": "test",
-      "commitMessageExtra": ""
-    }
-  },
   "customDatasources": {
-    "docker-ce": {
+    "docker-jammy-amd64": {
       "defaultRegistryUrlTemplate": "https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/",
       "format": "html"
     }
@@ -21,163 +13,29 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["go: (?<currentValue>.+)"],
-      "depNameTemplate": "go",
-      "datasourceTemplate": "golang-version"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["nodelts: (?<currentValue>20.+)"],
-      "depNameTemplate": "node",
-      "datasourceTemplate": "node",
-      "versioningTemplate": "node"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["nodeCurrent: (?<currentValue>21.+)"],
-      "depNameTemplate": "node",
-      "datasourceTemplate": "node",
-      "versioningTemplate": "node"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["gcloud: (?<currentValue>.+)"],
-      "depNameTemplate": "twistedpair/google-cloud-sdk",
-      "datasourceTemplate": "github-tags"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["git_lfs: (?<currentValue>.+)"],
-      "depNameTemplate": "git-lfs/git-lfs",
-      "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^v(?<version>.*)$"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["gradle: (?<currentValue>.+)"],
-      "depNameTemplate": "gradle",
-      "datasourceTemplate": "gradle-version"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["lein: (?<currentValue>.+)"],
-      "depNameTemplate": "technomancy/leiningen",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["pyenv: (?<currentValue>.+)"],
-      "depNameTemplate": "pyenv/pyenv",
-      "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^v(?<version>.*)$"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["python3: (?<currentValue>.+)"],
-      "depNameTemplate": "python/cpython",
-      "datasourceTemplate": "github-releases"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["ruby: (?<currentValue>.+)"],
-      "depNameTemplate": "ruby",
-      "datasourceTemplate": "ruby-version"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["sbt: (?<currentValue>.+)"],
-      "depNameTemplate": "sbt/sbt",
-      "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^v(?<version>.*)$"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["yq: (?<currentValue>.+)"],
-      "depNameTemplate": "mikefarah/yq",
-      "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^v(?<version>.*)$"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["maven: (?<currentValue>.*)"],
-      "depNameTemplate": "apache/maven",
-      "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^maven-(?<version>.*)$"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["docker: 5:(?<currentValue>.+)"],
-      "datasourceTemplate": "custom.docker-ce",
-      "depNameTemplate": "docker",
-      "versioningTemplate": "deb"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["containerd: (?<currentValue>.+)"],
-      "datasourceTemplate": "custom.docker-ce",
-      "depNameTemplate": "containerd",
-      "versioningTemplate": "deb"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["docker-compose: (?<currentValue>.+)"],
-      "datasourceTemplate": "custom.docker-ce",
-      "depNameTemplate": "docker-compose",
+      "fileMatch": ["manifest.yml"],
+      "matchStrings": [
+        "docker: 5:(?<currentValue>.+)",
+        "containerd: (?<currentValue>.+)",
+        "docker-compose: (?<currentValue>.+)"
+      ],
+      "datasourceTemplate": "custom.docker-jammy-amd64",
+      "depNameTemplate": "docker-jammy-amd64",
       "versioningTemplate": "deb"
     }
   ],
   "packageRules": [
     {
-      "matchDatasources": ["custom.docker-ce"],
-      "matchDepNames": ["docker"],
-      "extractVersion": "docker-ce_(?<version>.+)_amd64\\.deb$"
-    },
-    {
-      "matchDatasources": ["custom.docker-ce"],
-      "matchDepNames": ["containerd"],
-      "extractVersion": "containerd\\.io_(?<version>.+)_amd64\\.deb"
-    },
-    {
-      "matchDatasources": ["custom.docker-ce"],
-      "matchDepNames": ["docker-compose"],
-      "extractVersion": "docker-compose-plugin_(?<version>.+)_amd64\\.deb"
-    },
-    {
-      "updateTypes": ["minor", "patch"],
-      "matchPackageNames": ["node"]
-    },
-    {
-      "updateTypes": ["major", "minor", "patch"],
-      "matchPackageNames": ["twistedpair/google-cloud-sdk"]
+      "matchDatasources": ["custom.docker-jammy-amd64"],
+      "matchDepNames": ["docker-jammy-amd64"],
+      "extractVersion": "docker-ce_(?<version>.+)_amd64\\.deb$|containerd\\.io_(?<version>.+)_amd64\\.deb|docker-compose-plugin_(?<version>.+)_amd64\\.deb"
     },
     {
       "groupName": "ubuntu-2204",
       "groupSlug": "ubuntu-2204-all",
-      "matchFileNames": ["manifest2.yml"],
+      "matchFileNames": ["manifest.yml"],
       "matchDatasources": [
-        "github-releases",
-        "github-tags",
-        "custom.docker-ce",
-        "golang-version",
-        "node",
-        "gradle-version",
-        "ruby-version"
+        "custom.docker-jammy-amd64"
       ]
     }
   ]
