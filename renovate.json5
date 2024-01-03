@@ -20,16 +20,16 @@
       "docker-compose: (?<compose_version>.+)"
     ],
     "datasourceTemplate": "custom.docker-jammy-amd64",
-    "depNameTemplate": "${depName}-jammy-amd64",
-    "currentValueTemplate": "${depName}",
+    "depNameTemplate": "${depName}",
+    "currentValueTemplate": "${currentValue}",
     "versioningTemplate": "deb"
     }
   ],
   "packageRules": [
     {
       "matchDatasources": ["custom.docker-jammy"],
-      "matchDepNames": ["${depName}-jammy-amd64"],
-      "extractVersion": "(?<depName>docker)-ce_(?<docker_version>.+)_amd64\\.deb$|containerd\\.io_(?<containerd_version>.+)_amd64\\.deb|docker-compose-plugin_(?<compose_version>.+)_amd64\\.deb"
+      "matchDepNames": ["${depName}"],
+      "extractVersion": "(?<depName>docker)-ce_(?<docker_version>.+)_amd64\\.deb$|(?<depName>containerd)\\.io_(?<containerd_version>.+)_amd64\\.deb|(?<depName>docker-compose)-plugin_(?<compose_version>.+)_amd64\\.deb"
     },
     {
       "groupName": "ubuntu-2204",
