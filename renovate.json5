@@ -19,9 +19,9 @@
       "containerd: (?<containerd_version>.+)",
       "docker-compose: (?<compose_version>.+)"
     ],
-    "datasourceTemplate": "custom.docker-jammy-amd64",
-    "depNameTemplate": "(?<depName>.*?)",
-    "currentValueTemplate": "(?<currentValue>)",
+    "datasourceTemplate": "custom.docker-jammy",
+    "depNameTemplate": "${depName}",
+    "currentValueTemplate": "${currentValue}",
     "versioningTemplate": "deb"
     }
   ],
