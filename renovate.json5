@@ -13,7 +13,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["manifest.yml"],
+      "fileMatch": ["manifest2.yml"],
       "matchStrings": ["docker: 5:(?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "docker",
@@ -21,7 +21,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest.yml"],
+      "fileMatch": ["manifest2.yml"],
       "matchStrings": ["containerd: (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "containerd",
@@ -29,7 +29,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest.yml"],
+      "fileMatch": ["manifest2.yml"],
       "matchStrings": ["docker-compose: (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "docker-compose",
@@ -55,7 +55,7 @@
     {
       "groupName": "ubuntu-2204",
       "groupSlug": "ubuntu-2204-all",
-      "matchFileNames": ["manifest.yml"],
+      "matchFileNames": ["manifest2.yml"],
       "matchDatasources": [
         "custom.docker-jammy"
       ]
