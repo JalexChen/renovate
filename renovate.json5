@@ -20,8 +20,8 @@
       "docker-compose: (?<compose_version>.+)"
     ],
     "datasourceTemplate": "custom.docker-jammy",
-    "depNameTemplate": "${depName}",
-    "currentValueTemplate": "${currentValue}",
+    "depNameTemplate": "(?<depName>.*?)",
+    "currentValueTemplate": "(?<currentValue>)",
     "versioningTemplate": "deb"
     }
   ],
