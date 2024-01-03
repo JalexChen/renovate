@@ -20,15 +20,14 @@
       "docker-compose: (?<compose_version>.+)"
     ],
     "datasourceTemplate": "custom.docker-jammy-amd64",
-    "depNameTemplate": "${depName}",
-    "currentValueTemplate": "${currentValue}",
+    "depNameTemplate": "(?<depName>.*?)",
+    "currentValueTemplate": "(?<currentValue>)",
     "versioningTemplate": "deb"
     }
   ],
   "packageRules": [
     {
       "matchDatasources": ["custom.docker-jammy"],
-      "matchDepNames": ["${depName}"],
       "extractVersion": "(?<depName>docker)-ce_(?<docker_version>.+)_amd64\\.deb$|(?<depName>containerd)\\.io_(?<containerd_version>.+)_amd64\\.deb|(?<depName>docker-compose)-plugin_(?<compose_version>.+)_amd64\\.deb"
     },
     {
