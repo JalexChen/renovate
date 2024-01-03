@@ -36,18 +36,15 @@
   "packageRules": [
     {
       "matchDatasources": ["custom.docker-jammy"],
-      "matchDepNames": ["docker"],
-      "extractVersion": "(?<depName>)-ce_(?<version>.+)_amd64\\.deb$"
+      "extractVersion": "(?<depName>docker)-ce_(?<version>.+)_amd64\\.deb$"
     },
     {
       "matchDatasources": ["custom.docker-jammy"],
-      "matchDepNames": ["containerd"],
-      "extractVersion": "(?<depName>)\\.io_(?<version>.+)_amd64\\.deb"
+      "extractVersion": "(?<depName>containerd)\\.io_(?<version>.+)_amd64\\.deb"
     },
     {
       "matchDatasources": ["custom.docker-jammy"],
-      "matchDepNames": ["docker-compose"],
-      "extractVersion": "(?<depName>)-plugin_(?<version>.+)_amd64\\.deb"
+      "extractVersion": "(?<depName>docker-compose)-plugin_(?<version>.+)_amd64\\.deb"
     },
     {
       "groupName": "ubuntu-2204",
