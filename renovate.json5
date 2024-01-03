@@ -14,21 +14,21 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["(?<depName>): 5:(?<currentValue>.+)"],
+      "matchStrings": ["(?<depName>.+): 5:(?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "versioningTemplate": "deb"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["(?<depName>): (?<currentValue>.+)"],
+      "matchStrings": ["(?<depName>.+): (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "versioningTemplate": "deb"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["(?<depName>): (?<currentValue>.+)"],
+      "matchStrings": ["(?<depName>.+): (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "versioningTemplate": "deb"
     }
