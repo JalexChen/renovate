@@ -4,6 +4,8 @@
     "config:recommended"
   ],
   "repositories": ["JalexChen/renovate"],
+  "groupName": "ubuntu-2204",
+  "groupSlug": "ubuntu-2204-all",
   "customDatasources": {
     "docker-jammy": {
       "defaultRegistryUrlTemplate": "https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/",
@@ -153,7 +155,7 @@
     {
       "groupName": "ubuntu-2204",
       "groupSlug": "ubuntu-2204-all",
-      "matchFileNames": ["manifest2.yml"],
+      "matchFileNames": ["hello/manifest2.yml"],
       "matchDatasources": [
         "custom.docker-jammy",
         "github-releases",
