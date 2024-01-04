@@ -102,7 +102,7 @@
       "fileMatch": ["manifest2.yml"],
       "matchStrings": ["python3: (?<currentValue>.+)"],
       "depNameTemplate": "python/cpython",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-tags"
     },
     {
       "customType": "regex",
@@ -166,5 +166,6 @@
         "gradle-version"
       ]
     }
-  ]
+  ],
+  "separateMajorMinor": false
 }
