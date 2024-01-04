@@ -45,7 +45,7 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["nodelts: (?<currentValue>.+)"],
+      "matchStrings": ["nodelts: (?<currentValue>20.+)"],
       "depNameTemplate": "nodelts",
       "datasourceTemplate": "node",
       "versioningTemplate": "node"
@@ -53,7 +53,7 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["nodeCurrent: (?<currentValue>.+)"],
+      "matchStrings": ["nodeCurrent: (?<currentValue>21.+)"],
       "depNameTemplate": "nodeCurrent",
       "datasourceTemplate": "node",
       "versioningTemplate": "node"
@@ -149,14 +149,6 @@
       "matchDatasources": ["custom.docker-jammy"],
       "matchDepNames": ["docker-compose"],
       "extractVersion": "docker-compose-plugin_(?<version>.+)_amd64\\.deb"
-    },
-    {
-      "matchPackageNames": ["nodelts"],
-      "allowedVersions": "20+\\."
-    },
-    {
-      "matchPackageNames": ["nodeCurrent"],
-      "allowedVersions": "21+\\."
     },
     {
       "groupName": "ubuntu-2204",
