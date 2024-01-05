@@ -1,25 +1,25 @@
-go: 1.20.1
-nodelts: 20.7.0
-nodeCurrent: 21.0.0
-gcloud: 448.0.0
-git_lfs: 3.1.1
-gradle: 8.3
-lein: 2.10.0
-maven: 3.9.3
-pyenv: 2.3.27
-python2: 2.7.18
-python3: 3.11.5
-ruby: 3.2.2
-sbt: 1.9.6
-yarn: 1.22.19
-yq: 4.35.2
+gcloud_version: 448.0.0
+git_lfs_version: 3.1.1
+go_version: 1.20.1
+gradle_version: 8.3
+java8_version: 8
+java17_version: 17
+lein_version: 2.10.0
+maven_version: 3.9.3
+nodelts_version: 20.7.0
+nodeCurrent_version: 21.0.0
+python2_version: 2.7.18
+python3_version: 3.11.5
+pyenv_version: 2.3.27
+ruby_version: 3.2.2
+sbt_version: 1.9.6
+yarn_version: 1.22.19
+yq_version: 4.35.2
 
 # apt
-docker: 5:24.0.6-1~ubuntu.22.04~jammy
-containerd: 1.6.24-1
-docker-compose: 2.21.0-1~ubuntu.22.04~jammy
-java8: 8
-java17: 17
+docker_version: 5:24.0.6-1~ubuntu.22.04~jammy
+containerd_version: 1.6.24-1
+docker_compose_version: 2.21.0-1~ubuntu.22.04~jammy
 
 npm:
   - coffescript
