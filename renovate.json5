@@ -63,6 +63,14 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
+      "matchStrings": ["yarn@(?<currentValue>.+)"],
+      "depNameTemplate": "yarnpkg/yarn",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["manifest2.yml"],
       "matchStrings": ["gcloud_version: (?<currentValue>.+)"],
       "depNameTemplate": "twistedpair/google-cloud-sdk",
       "datasourceTemplate": "github-tags"
@@ -156,6 +164,10 @@
     {
       "matchDepNames": ["git-lfs/git-lfs"],
       "allowedVersions": "<=3.1.1"
+    },
+    {
+      "matchDepNames": ["yarnpkg/yarn"],
+      "allowedVersions": "<=1.22.19"
     },
     {
       "groupName": "ubuntu-2204",
