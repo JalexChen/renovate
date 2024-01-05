@@ -16,7 +16,7 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["docker: 5:(?<currentValue>.+)"],
+      "matchStrings": ["docker_version: 5:(?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "docker",
       "versioningTemplate": "deb"
@@ -24,7 +24,7 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["containerd: (?<currentValue>.+)"],
+      "matchStrings": ["containerd_version: (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "containerd",
       "versioningTemplate": "deb"
@@ -32,7 +32,7 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["docker-compose: (?<currentValue>.+)"],
+      "matchStrings": ["docker_compose_version: (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "docker-compose",
       "versioningTemplate": "deb"
@@ -40,14 +40,14 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["go: (?<currentValue>.+)"],
+      "matchStrings": ["go_version: (?<currentValue>.+)"],
       "depNameTemplate": "go",
       "datasourceTemplate": "golang-version"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["nodelts: (?<currentValue>20.+)"],
+      "matchStrings": ["nodelts_version: (?<currentValue>20.+)"],
       "depNameTemplate": "nodelts",
       "datasourceTemplate": "node",
       "versioningTemplate": "node"
@@ -55,7 +55,7 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["nodeCurrent: (?<currentValue>21.+)"],
+      "matchStrings": ["nodeCurrent_version: (?<currentValue>21.+)"],
       "depNameTemplate": "nodeCurrent",
       "datasourceTemplate": "node",
       "versioningTemplate": "node"
@@ -63,14 +63,14 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["gcloud: (?<currentValue>.+)"],
+      "matchStrings": ["gcloud_version: (?<currentValue>.+)"],
       "depNameTemplate": "twistedpair/google-cloud-sdk",
       "datasourceTemplate": "github-tags"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["git_lfs: (?<currentValue>.+)"],
+      "matchStrings": ["git_lfs_version: (?<currentValue>.+)"],
       "depNameTemplate": "git-lfs/git-lfs",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>.*)$"
@@ -78,21 +78,21 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["gradle: (?<currentValue>.+)"],
+      "matchStrings": ["gradle_version: (?<currentValue>.+)"],
       "depNameTemplate": "gradle",
       "datasourceTemplate": "gradle-version"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["lein: (?<currentValue>.+)"],
+      "matchStrings": ["lein_version: (?<currentValue>.+)"],
       "depNameTemplate": "technomancy/leiningen",
       "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["pyenv: (?<currentValue>.+)"],
+      "matchStrings": ["pyenv_version: (?<currentValue>.+)"],
       "depNameTemplate": "pyenv/pyenv",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>.*)$"
@@ -100,7 +100,7 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["python3: (?<currentValue>.+)"],
+      "matchStrings": ["python3_version: (?<currentValue>.+)"],
       "depNameTemplate": "python/cpython",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>.*)$"
@@ -108,14 +108,14 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["ruby: (?<currentValue>.+)"],
+      "matchStrings": ["ruby_version: (?<currentValue>.+)"],
       "depNameTemplate": "ruby",
       "datasourceTemplate": "ruby-version"
     },
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["sbt: (?<currentValue>.+)"],
+      "matchStrings": ["sbt_version: (?<currentValue>.+)"],
       "depNameTemplate": "sbt/sbt",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>.*)$"
@@ -123,7 +123,7 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["yq: (?<currentValue>.+)"],
+      "matchStrings": ["yq_version: (?<currentValue>.+)"],
       "depNameTemplate": "mikefarah/yq",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>.*)$"
@@ -131,7 +131,7 @@
     {
       "customType": "regex",
       "fileMatch": ["manifest2.yml"],
-      "matchStrings": ["maven: (?<currentValue>.*)"],
+      "matchStrings": ["maven_version: (?<currentValue>.*)"],
       "depNameTemplate": "apache/maven",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^maven-(?<version>.*)$"
@@ -152,6 +152,10 @@
       "matchDatasources": ["custom.docker-jammy"],
       "matchDepNames": ["docker-compose"],
       "extractVersion": "docker-compose-plugin_(?<version>.+)_amd64\\.deb"
+    },
+    {
+      "matchDepNames": ["git-lfs/git-lfs"],
+      "allowedVersions": "<=3.1.1"
     },
     {
       "groupName": "ubuntu-2204",
