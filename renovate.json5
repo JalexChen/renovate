@@ -18,7 +18,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["docker_version: 5:(?<currentValue>.*?)~"],
       "datasourceTemplate": "custom.docker-ce",
@@ -29,7 +29,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["containerd_version: (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-ce",
@@ -40,7 +40,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["docker_compose_version: (?<currentValue>.*?)~"],
       "datasourceTemplate": "custom.docker-ce",
@@ -51,7 +51,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["go_version: (?<currentValue>.+)"],
       "depNameTemplate": "go",
@@ -61,7 +61,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["nodelts_version: (?<currentValue>20.+)"],
       "depNameTemplate": "nodelts",
@@ -72,7 +72,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["nodeCurrent_version: (?<currentValue>21.+)"],
       "depNameTemplate": "nodeCurrent",
@@ -83,7 +83,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["yarn@(?<currentValue>.+)"],
       "depNameTemplate": "yarnpkg/yarn",
@@ -94,7 +94,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["gcloud_version: (?<currentValue>.+)"],
       "depNameTemplate": "twistedpair/google-cloud-sdk",
@@ -104,7 +104,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["git_lfs_version: (?<currentValue>.+)"],
       "depNameTemplate": "git-lfs/git-lfs",
@@ -115,7 +115,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["gradle_version: (?<currentValue>.+)"],
       "depNameTemplate": "gradle",
@@ -125,7 +125,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["lein_version: (?<currentValue>.+)"],
       "depNameTemplate": "technomancy/leiningen",
@@ -135,7 +135,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["pyenv_version: (?<currentValue>.+)"],
       "depNameTemplate": "pyenv/pyenv",
@@ -146,7 +146,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["python3_version: (?<currentValue>.+)"],
       "depNameTemplate": "python/cpython",
@@ -157,7 +157,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["ruby_version: (?<currentValue>.+)"],
       "depNameTemplate": "ruby",
@@ -167,7 +167,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["sbt_version: (?<currentValue>.+)"],
       "depNameTemplate": "sbt/sbt",
@@ -178,7 +178,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["yq_version: (?<currentValue>.+)"],
       "depNameTemplate": "mikefarah/yq",
@@ -189,7 +189,7 @@
       "customType": "regex",
       "fileMatch": [
         "ubuntu-2004-manifest.yml",
-        "manifest2.yml
+        "manifest2.yml"
       ],
       "matchStrings": ["maven_version: (?<currentValue>.*)"],
       "depNameTemplate": "apache/maven",
