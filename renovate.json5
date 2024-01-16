@@ -15,7 +15,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["docker_version: 5:(?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "docker",
@@ -23,7 +23,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["containerd_version: (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "containerd",
@@ -31,7 +31,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["docker_compose_version: (?<currentValue>.+)"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "docker-compose",
@@ -39,14 +39,14 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["go_version: (?<currentValue>.+)"],
       "depNameTemplate": "go",
       "datasourceTemplate": "golang-version"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["nodelts_version: (?<currentValue>20.+)"],
       "depNameTemplate": "nodelts",
       "datasourceTemplate": "node",
@@ -54,7 +54,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["nodeCurrent_version: (?<currentValue>21.+)"],
       "depNameTemplate": "nodeCurrent",
       "datasourceTemplate": "node",
@@ -62,7 +62,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["yarn@(?<currentValue>.+)"],
       "depNameTemplate": "yarnpkg/yarn",
       "datasourceTemplate": "github-releases",
@@ -70,14 +70,14 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["gcloud_version: (?<currentValue>.+)"],
       "depNameTemplate": "twistedpair/google-cloud-sdk",
       "datasourceTemplate": "github-tags"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["git_lfs_version: (?<currentValue>.+)"],
       "depNameTemplate": "git-lfs/git-lfs",
       "datasourceTemplate": "github-releases",
@@ -85,21 +85,21 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["gradle_version: (?<currentValue>.+)"],
       "depNameTemplate": "gradle",
       "datasourceTemplate": "gradle-version"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["lein_version: (?<currentValue>.+)"],
       "depNameTemplate": "technomancy/leiningen",
       "datasourceTemplate": "github-releases"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["pyenv_version: (?<currentValue>.+)"],
       "depNameTemplate": "pyenv/pyenv",
       "datasourceTemplate": "github-releases",
@@ -107,7 +107,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["python3_version: (?<currentValue>.+)"],
       "depNameTemplate": "python/cpython",
       "datasourceTemplate": "github-tags",
@@ -115,14 +115,14 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["ruby_version: (?<currentValue>.+)"],
       "depNameTemplate": "ruby",
       "datasourceTemplate": "ruby-version"
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["sbt_version: (?<currentValue>.+)"],
       "depNameTemplate": "sbt/sbt",
       "datasourceTemplate": "github-releases",
@@ -130,7 +130,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["yq_version: (?<currentValue>.+)"],
       "depNameTemplate": "mikefarah/yq",
       "datasourceTemplate": "github-releases",
@@ -138,7 +138,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["manifest2.yml"],
+      "fileMatch": ["ubuntu-2004-manifest.yml"],
       "matchStrings": ["maven_version: (?<currentValue>.*)"],
       "depNameTemplate": "apache/maven",
       "datasourceTemplate": "github-releases",
@@ -172,7 +172,7 @@
     {
       "groupName": "ubuntu-2204",
       "groupSlug": "ubuntu-2204-all",
-      "matchFileNames": ["hello/manifest2.yml"],
+      "matchFileNames": ["hello/ubuntu-2004-manifest.yml"],
       "matchDatasources": [
         "custom.docker-jammy",
         "github-releases",
