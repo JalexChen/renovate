@@ -16,7 +16,7 @@
     {
       "customType": "regex",
       "fileMatch": ["ubuntu-2004-manifest.yml"],
-      "matchStrings": ["docker_version: 5:(?<currentValue>.+)"],
+      "matchStrings": ["docker_version: 5:(?<currentValue>.*?)~"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "docker",
       "versioningTemplate": "deb"
@@ -32,7 +32,7 @@
     {
       "customType": "regex",
       "fileMatch": ["ubuntu-2004-manifest.yml"],
-      "matchStrings": ["docker_compose_version: (?<currentValue>.+)"],
+      "matchStrings": ["docker_compose_version: (?<currentValue>.*?)~"],
       "datasourceTemplate": "custom.docker-jammy",
       "depNameTemplate": "docker-compose",
       "versioningTemplate": "deb"
@@ -149,7 +149,7 @@
     {
       "matchDatasources": ["custom.docker-jammy"],
       "matchDepNames": ["docker"],
-      "extractVersion": "docker-ce_(?<version>.+)-1~ubuntu.22.04~jammy_amd64\\.deb$"
+      "extractVersion": "docker-ce_(?<version>.+)~ubuntu.22.04~jammy_amd64\\.deb$"
     },
     {
       "matchDatasources": ["custom.docker-jammy"],
@@ -159,7 +159,7 @@
     {
       "matchDatasources": ["custom.docker-jammy"],
       "matchDepNames": ["docker-compose"],
-      "extractVersion": "docker-compose-plugin_(?<version>.+)-1~ubuntu.22.04~jammy_amd64\\.deb"
+      "extractVersion": "docker-compose-plugin_(?<version>.+)~ubuntu.22.04~jammy_amd64\\.deb"
     },
     {
       "matchDepNames": ["git-lfs/git-lfs"],
