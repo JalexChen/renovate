@@ -149,7 +149,7 @@
     {
       "matchDatasources": ["custom.docker-jammy"],
       "matchDepNames": ["docker"],
-      "extractVersion": "docker-ce_(?<version>.+)_amd64\\.deb$"
+      "extractVersion": "docker-ce_(?<version>.+)-1~ubuntu.22.04~jammy_amd64\\.deb$"
     },
     {
       "matchDatasources": ["custom.docker-jammy"],
@@ -159,7 +159,7 @@
     {
       "matchDatasources": ["custom.docker-jammy"],
       "matchDepNames": ["docker-compose"],
-      "extractVersion": "docker-compose-plugin_(?<version>.+)_amd64\\.deb"
+      "extractVersion": "docker-compose-plugin_(?<version>.+)-1~ubuntu.22.04~jammy_amd64\\.deb"
     },
     {
       "matchDepNames": ["git-lfs/git-lfs"],
