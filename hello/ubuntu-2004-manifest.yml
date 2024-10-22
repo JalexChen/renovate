@@ -1,24 +1,24 @@
-gcloud_version: 448.0.0
+gcloud_version: 498.0.0
 git_lfs_version: 3.1.1
-go_version: 1.20.1
-gradle_version: 8.3
+go_version: 1.23.2
+gradle_version: 8.10.2
 java8_version: 8
 java17_version: 17
-lein_version: 2.10.0
-maven_version: 3.9.3
-nodelts_version: 20.7.0
-nodeCurrent_version: 21.0.0
+lein_version: 2.11.2
+maven_version: 3.9.9
+nodelts_version: 20.18.0
+nodeCurrent_version: 21.7.3
 python2_version: 2.7.18
-python3_version: 3.11.5
-pyenv_version: 2.3.27
-ruby_version: 3.2.2
-sbt_version: 1.9.6
-yq_version: 4.35.2
+python3_version: 3.13.0
+pyenv_version: 2.4.16
+ruby_version: 3.3.5
+sbt_version: 1.10.3
+yq_version: 4.44.3
 
 # apt
-docker_version: 5:24.0.6-1~ubuntu.20.04~focal
-containerd_version: 1.6.24-1
-docker_compose_version: 2.21.0-1~ubuntu.20.04~focal
+docker_version: 5:27.3.1-1~ubuntu.20.04~focal
+containerd_version: 1.7.22-1
+docker_compose_version: 2.29.7-1~ubuntu.20.04~focal
 
 npm:
   - coffescript
@@ -27,7 +27,7 @@ npm:
   - bower
   - nodeunit
   - mocha
-  - yarn@1.22.18
+  - yarn@1.22.19
 
 pip:
   - virtualenv
